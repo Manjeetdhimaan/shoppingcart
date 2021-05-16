@@ -14,7 +14,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { AppBasicHighlight } from './basicHighlight/basic.ighlight.directive';
 import { BetterHighlightDirective } from './betterHightlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
-
+import { DropDownDirective } from './shared/dropdown.directive'
+import { LoggerService } from './logger.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,13 +28,14 @@ import { UnlessDirective } from './unless.directive';
     ShoppingEditComponent,
     AppBasicHighlight,
     BetterHighlightDirective,
-    UnlessDirective
+    UnlessDirective,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

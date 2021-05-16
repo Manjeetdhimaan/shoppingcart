@@ -1,19 +1,20 @@
 import { Component, OnInit, ViewChild, ElementRef, Output ,EventEmitter} from '@angular/core';
 
 import { Ingredient } from 'src/app/shared/ingredient.model';
-import { stringify } from 'querystring';
+import { LoggerService } from '../../logger.service'
 
 @Component({
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html',
-  styleUrls: ['./shopping-edit.component.css']
+  styleUrls: ['./shopping-edit.component.css'],
+ 
 })
 export class ShoppingEditComponent implements OnInit {
 @ViewChild('nameInput') inputData:ElementRef;
 @ViewChild('amountInput') inputAmnt:ElementRef;
 @Output() ingredientEmiited = new EventEmitter<Ingredient>();
 @Output() ingredientClearEmitted = new EventEmitter<void>();
-  constructor() { }
+  constructor(private loggerService:LoggerService) { }
 
   ngOnInit() {
 
@@ -23,6 +24,8 @@ export class ShoppingEditComponent implements OnInit {
     const amount = this.inputAmnt.nativeElement.value
     const newIngredient = new Ingredient(name,amount);
     this.ingredientEmiited.emit(newIngredient);
+    // const log1 = new LoggerService()
+    this.loggerService.logToConsole(this.inputData.nativeElement.value)
   }
   clearIngredient(){
     this.ingredientClearEmitted.emit();
