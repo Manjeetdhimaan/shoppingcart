@@ -4,7 +4,7 @@
 //   providedIn: 'root'
 // })
 export class LoggerService {
-  logToConsole(msg: LoggerService) {
+  logToConsole(msg: string) {
     console.log(msg)
   }
   constructor() { }
