@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +13,6 @@ export class AppComponent {
 //   evenNumber=[2,4,6]
 //   odd=false;
 //   value=100;
-loadedFeature:string = 'Recipes' 
-
- 
-onNavigate(features:string){
-  this.loadedFeature = features;
-  }
 }
   // export class AppComponent{
 

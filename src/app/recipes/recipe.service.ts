@@ -21,4 +21,7 @@ export class RecipeService {
 
 constructor(){ 
 }
+getRecipes(index:number){
+  return this.recipes[index];
+}
 }

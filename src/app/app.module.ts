@@ -15,8 +15,12 @@ import { AppBasicHighlight } from './basicHighlight/basic.ighlight.directive';
 import { BetterHighlightDirective } from './betterHightlight/better-highlight.directive';
 import { UnlessDirective } from './unless.directive';
 import { DropDownDirective } from './shared/dropdown.directive'
-import { LoggerService } from './logger.service';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { ShoppingListService } from '../app/shopping-list/shopping-list.service';
+import { AppRoutingModule } from './appRouting.module';
+import { AppRecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,13 +35,15 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     BetterHighlightDirective,
     UnlessDirective,
     DropDownDirective,
-  
+    AppRecipeStartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule
   ],
-  providers: [LoggerService,ShoppingListService],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

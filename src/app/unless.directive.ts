@@ -4,6 +4,8 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
   selector: '[appUnless]'
 })
 export class UnlessDirective  {
+  constructor(private templeteRef:TemplateRef<any>,private viewRef:ViewContainerRef) { }
+
 @Input() set appUnless(condition:boolean){
   if(condition){
 this.viewRef.createEmbeddedView(this.templeteRef);
@@ -12,5 +14,4 @@ this.viewRef.createEmbeddedView(this.templeteRef);
     this.viewRef.clear();
   }
 }
-  constructor(private templeteRef:TemplateRef<any>,private viewRef:ViewContainerRef) { }
 }

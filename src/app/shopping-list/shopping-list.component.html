@@ -2,15 +2,17 @@
   <div class="col-xs-10">
     <app-shopping-edit (ingredientEmiited) = "onIngredientSelected($event)" (ingredientClearEmitted) = "clearIngeadient()"></app-shopping-edit>
     <hr>
-    <ul class="list-group ">
+    <ul class="list-group " *ngFor="let ingredient of ingredients;let i =index">
       <a
-        class="list-group-item "
+         class="list-group-item "
         style="cursor: pointer"
-        *ngFor="let ingredient of ingredients;let i =index"
+        
       >
-      {{ ingredient.name }} ({{ ingredient.amount }})
-      <button class="btn btn-danger btn-rounded" (click) ="deleteIngredient(i)">Delete</button>
-      </a>
+     {{ ingredient.name }} ({{ ingredient.amount }})
+      <span> <button class="btn btn-danger btn-rounded" (click) ="deleteIngredient(i)">Delete</button> </span>
+      
+    </a>
+    
     </ul>
   </div>
 </div>
