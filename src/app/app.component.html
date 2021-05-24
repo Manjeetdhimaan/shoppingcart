@@ -1,73 +1,8 @@
-<!--  
-<app-new-account (addedAccount)="onAddedAccount($event)">
-
-</app-new-account>
-<app-account
-*ngFor="let acc of account; let i = index"
-[account]="acc"
-[id]="i"
-(statusChanged)="onStatusChange($event)"
-></app-account> -->
-
-
-
-<app-header ></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-     <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<!-- just a practice -->
-<!-- <button class="btn btn-primary" (click)="odd=!odd">changeNumber</button>
-<ul>
-
-
-  <div *ngIf="odd" >
-    <li *ngFor="let odd of oddNumber" [ngClass]="'class'">
-      {{odd}}
-    </li>
-  </div>
-  <div *ngIf="!odd" >
-    <li *ngFor="let even of evenNumber">
-      {{even}}
-    </li>
-
-  </div>
-  <ng-template [ngIf]="!odd" class="container">
- 
-      <li *ngFor="let even of evenNumber">
-        {{even}}
-      </li>
-  </ng-template>
-
-
-
-  
-   <div *appUnless="odd" >
-    <li *ngFor="let odd of oddNumber" [ngClass]="'class'">
-      {{odd}}
-    </li>
-  </div>
-  <div *ngIf="!odd" >
-    <li *ngFor="let even of evenNumber">
-      {{even}}
-    </li>
-
-  </div>
-</ul>
-<p basicHighlight>Im Web developer</p>
-<p [appBetterHighlight]="'green'" [defaultColor]="'yellow'">Im Web developer ....</p>
-<div [ngSwitch]="value">
-<p *ngSwitchCase="12">value = 12 </p>
-<p *ngSwitchCase ="15">value = 15 </p>
-<p *ngSwitchCase ="100">value = 100 </p>
-<p *ngSwitchDefault="150"> value = 150</p>
-</div> -->
