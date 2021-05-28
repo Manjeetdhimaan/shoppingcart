@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import {  HttpResponse } from '@angular/common/http';
 import { Recipe } from '../recipes/recipe.model';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
-      constructor( private dataStorageService:DataStorageService) {
+      constructor( private dataStorageService:DataStorageService,private authService:AuthService) {
   }
 
   onAddData(){
@@ -21,4 +22,10 @@ export class HeaderComponent {
   onFetchData(){
     this.dataStorageService.getRecipes()
   }
+  onAuth(){
+   return this.authService.isAuthenticated()
+  }
+   authLogOut(){
+     this.authService.logOut()
+   }
 }
